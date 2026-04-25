@@ -8,13 +8,10 @@ const config = ({ config }: ConfigContext): ExpoConfig => ({
   extra: {
     ...config.extra,
     eas: {
-      projectId: '5310c5f2-8ab4-4d5e-8f53-a5c90aa9594a',
+      ...config.extra.eas,
       observe: {
         enableInDebug: true,
-        endpointUrl:
-          process.env.OBSERVE_ENV === 'staging'
-            ? 'https://staging-o.expo.dev/'
-            : 'https://o.expo.dev/',
+        endpointUrl: 'http://localhost:3003/',
       },
     },
   },
